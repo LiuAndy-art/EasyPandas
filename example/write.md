@@ -1,7 +1,6 @@
 导入模块
 ```python
->>> with open("../rdata.py", "rt", encoding="utf8") as fp: exec(fp.read())
->>> with open("../write.py", "rt", encoding="utf8") as fp: exec(fp.read())
+>>> from EasyPandas import read, write
 >>> irisdf = rdata("../data/iris.csv")
 ```
 

@@ -2,7 +2,7 @@
 ```python
 >>> import numpy as np
 >>> import pandas as pd
->>> with open("../stack.py", "rt", encoding="utf8") as fp: exec(fp.read())
+>>> from EasyPandas import stack
 ```
 
 测试stack参数
@@ -11,6 +11,17 @@
 >>> print(df_single_level_cols)
 >>> res = stack(df_single_level_cols)
 >>> print(res)
+```
+
+```
+     weight  height
+cat       0       1
+dog       2       3
+cat  weight    0
+     height    1
+dog  weight    2
+     height    3
+dtype: int64
 ```
 
 测试unstack参数
@@ -22,6 +33,17 @@
 >>> print(res)
 ```
 
+```
+one  a    1.0
+     b    2.0
+two  a    3.0
+     b    4.0
+dtype: float64
+       a    b
+one  1.0  2.0
+two  3.0  4.0
+```
+
 测试unstack参数，指定level
 ```python
 >>> index = pd.MultiIndex.from_tuples([('one', 'a'), ('one', 'b'), ('two', 'a'), ('two', 'b')])
@@ -29,4 +51,15 @@
 >>> print(s)
 >>> res = stack(s, isstack=0, level=0)
 >>> print(res)
+```
+
+```
+one  a    1.0
+     b    2.0
+two  a    3.0
+     b    4.0
+dtype: float64
+   one  two
+a  1.0  3.0
+b  2.0  4.0
 ```

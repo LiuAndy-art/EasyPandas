@@ -47,7 +47,7 @@ def write(
     示例:
     ===============================================================================0
     导入模块
-    >>> with open("../rdata.py", "rt", encoding="utf8") as fp: exec(fp.read())
+    >>> with open("../read.py", "rt", encoding="utf8") as fp: exec(fp.read())
     >>> with open("../write.py", "rt", encoding="utf8") as fp: exec(fp.read())
     >>> irisdf = rdata("../data/iris.csv")
     测试csv参数
